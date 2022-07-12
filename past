@@ -1,2 +1,0 @@
-DATE=$1
-ls "$HOME/.config/watson/frames" | entr -cr $HOME/reporting/pastScript $DATE

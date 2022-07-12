@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ls "$HOME/.config/watson/frames" | entr -cr /home/matus/reporting/current2script

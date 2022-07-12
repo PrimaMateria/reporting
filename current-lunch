@@ -1,1 +1,0 @@
-ls "$HOME/.config/watson/frames" | entr -cr watson log -c -d -G --no-pager -p break
