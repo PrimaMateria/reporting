@@ -1,0 +1,1 @@
+ls "$HOME/.config/watson/frames" | entr -cr watson report -d -c -G 

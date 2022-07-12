@@ -1,0 +1,2 @@
+ls "$HOME/.todo-txt/todo.txt" | entr -cr todo-txt -c projectview
+

@@ -1,0 +1,31 @@
+REPORT_DAY=`cat ./reportday`
+
+if [[ ! -z "$REPORT_DAY" ]]
+then
+  echo 
+  ./pastScript $REPORT_DAY 
+  echo 
+fi
+# echo "--------------------------------------------------"
+# echo " Week report "
+# echo "--------------------------------------------------"
+# watson report -c -G -p fraudpool -p di -f 2022-03-22 | grep -v ".*\[.*\]" | grep -v -e "^$"
+# echo
+# watson report -s -p fraudpool -p di -f 2022-03-22 | awk -f ./project-time-share.awk
+# echo
+
+echo "Break"
+if [[ -z "$REPORT_DAY" ]]
+then
+  watson log -c -d -G --no-pager -p break
+else
+  watson log -c -G --no-pager -p break -f $REPORT_DAY -t $REPORT_DAY
+fi
+
+echo "Current"
+if [[ -z "$REPORT_DAY" ]]
+then
+  watson log -c -w -G --no-pager -p webform -p other -p vacation -p none -p fraudpool -p di
+else
+  watson log -c -G --no-pager -p webform -p other -p vacation -p none -p fraudpool -p di -f $REPORT_DAY -t $REPORT_DAY
+fi

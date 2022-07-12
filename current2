@@ -1,0 +1,1 @@
+ls "$HOME/reporting/reportday" "$HOME/.config/watson/frames" | entr -cr "$HOME/reporting/current2script"

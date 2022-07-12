@@ -1,0 +1,1 @@
+ls "$HOME/.config/watson/frames" | entr -cr sh -c "watson report -p webform -p fraudpool -f 2021-06-01 -c -G | grep -E -v '\[.*\]' | grep -E -v '^$'"
