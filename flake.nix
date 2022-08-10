@@ -21,9 +21,30 @@
               $HOME/reporting/watson-add-di-other.sh 930 1000 +meeting +daily
           }   
 
-          fwl ()
+          report () 
           {
-              $HOME/reporting/watson-add-di-sprint.sh $1 $2 +DATAINT-2366 +code
+              activity=''${4:-code}
+              $HOME/reporting/watson-add-di-sprint.sh $1 $2 +$3 +$activity
+          }
+
+          cc ()
+          {
+              report $1 $2 DATAINT-2488 $3
+          }
+
+          concept ()
+          {
+              report $1 $2 DATAINT-2351 $3
+          }
+
+          tracking ()
+          {
+              report $1 $2 DATAINT-2484 $3
+          }
+
+          cms () 
+          { 
+              report $1 $2 DATAINT-2483 $3
           }
 
           echo "${name}"
