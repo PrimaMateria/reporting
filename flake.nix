@@ -27,24 +27,29 @@
               $HOME/reporting/watson-add-di-sprint.sh $1 $2 +$3 +$activity
           }
 
+          cc2 ()
+          {
+              report $1 $2 DATAINT-2578 $3
+          }
+
+          overlay () 
+          {
+              report $1 $2 DATAINT-2696 $3
+          }
+
           cc ()
           {
-              report $1 $2 DATAINT-2488 $3
+              report $1 $2 DATAINT-2687 $3
           }
 
-          concept ()
+          polling () 
           {
-              report $1 $2 DATAINT-2351 $3
+              report $1 $2 DATAINT-2690 $3
           }
 
-          tracking ()
+          buzz () 
           {
-              report $1 $2 DATAINT-2484 $3
-          }
-
-          cms () 
-          { 
-              report $1 $2 DATAINT-2483 $3
+              $HOME/reporting/watson-add-di-other.sh $1 $2 +buzz
           }
 
           echo "${name}"

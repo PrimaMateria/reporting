@@ -1,5 +1,7 @@
 REPORT_DAY=`cat ./reportday`
 
+cal -w -3 -m
+
 if [[ ! -z "$REPORT_DAY" ]]
 then
   echo 
@@ -25,7 +27,7 @@ fi
 echo "Current"
 if [[ -z "$REPORT_DAY" ]]
 then
-  watson log -c -w -G --no-pager -p webform -p other -p vacation -p none -p fraudpool -p di
+  watson log -c -w -G --no-pager -p other -p vacation -p none -p di
 else
-  watson log -c -G --no-pager -p webform -p other -p vacation -p none -p fraudpool -p di -f $REPORT_DAY -t $REPORT_DAY
+  watson log -c -G --no-pager -p other -p vacation -p none -p di -f $REPORT_DAY -t $REPORT_DAY
 fi

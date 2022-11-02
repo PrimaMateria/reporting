@@ -1,42 +1,10 @@
 DATE=$1
 echo "Analyzing $DATE"
 
-echo "--------------------------------------------------"
-echo " Commits"
-echo "--------------------------------------------------"
-
-# echo "Web Form"
-# echo "--------"
-# GIT_DIR=$HOME/dev/web-form/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
-
-# echo
-
-# echo "WF Loader"
-# echo "---------"
-# GIT_DIR=$HOME/dev/web-form-loader/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
-
-# echo
-
-# echo "SDS"
-# echo "---------"
-# GIT_DIR=$HOME/dev/schufa-design-system/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
-
-# echo
-
-# echo "FPUI"
-# echo "---------"
-# GIT_DIR=$HOME/dev/finapi-fraudpool-ui/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
-
-# echo
-
 echo "FDS"
-echo "---------"
 GIT_DIR=$HOME/dev/finapi-design-system/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
 
-echo
-
 echo "FWL"
-echo "---------"
 GIT_DIR=$HOME/dev/finapi-widget-library/.git git log --branches --format=format:"%ai %aE %s" | grep $DATE | grep matus.benko
 
 echo
