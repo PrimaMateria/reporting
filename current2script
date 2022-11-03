@@ -1,6 +1,7 @@
 REPORT_DAY=`cat ./reportday`
 
 cal -w -3 -m
+echo 
 
 if [[ ! -z "$REPORT_DAY" ]]
 then
@@ -23,6 +24,7 @@ then
 else
   watson log -c -G --no-pager -p break -f $REPORT_DAY -t $REPORT_DAY
 fi
+echo 
 
 echo "Current"
 if [[ -z "$REPORT_DAY" ]]

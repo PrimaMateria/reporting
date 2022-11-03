@@ -52,6 +52,12 @@
               $HOME/reporting/watson-add-di-other.sh $1 $2 +buzz
           }
 
+          x ()
+          {
+              TICKET=$(jira issue list --plain -q"STATUS!=DONE and ASSIGNEE in ('Matus Benko','Vyacheslav')" --columns "KEY,SUMMARY,STATUS,ASSIGNEE" --no-headers | fzf --height 20 | awk '{print $1}')
+              report $1 $2 $TICKET $3
+          }
+
           echo "${name}"
         '';
       };
