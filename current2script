@@ -1,5 +1,8 @@
 REPORT_DAY=`cat ./reportday`
 
+./jira-list.sh
+echo
+
 cal -w -3 -m
 echo 
 
@@ -9,6 +12,7 @@ then
   ./pastScript $REPORT_DAY 
   echo 
 fi
+
 # echo "--------------------------------------------------"
 # echo " Week report "
 # echo "--------------------------------------------------"
