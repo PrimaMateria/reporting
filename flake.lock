@@ -19,7 +19,24 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
+        "tomatoc-src": "tomatoc-src",
         "utils": "utils"
+      }
+    },
+    "tomatoc-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673358194,
+        "narHash": "sha256-36yZe/rBVqge6ceL+U5laczaVt9iPDFWms+8FiP93xw=",
+        "owner": "gabrielzschmitz",
+        "repo": "Tomato.C",
+        "rev": "ecb435b473a7fbbb7340f45af2e5248d76273482",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gabrielzschmitz",
+        "repo": "Tomato.C",
+        "type": "github"
       }
     },
     "utils": {
