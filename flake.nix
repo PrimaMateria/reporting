@@ -38,12 +38,15 @@
           alias @a="$HOME/reporting/watson-add.sh"
           alias @do="$HOME/reporting/watson-add-di-other.sh"
           alias @ds="$HOME/reporting/watson-add-di-sprint.sh"
+          alias @wo="$HOME/reporting/watson-add-webform-other.sh"
+          alias @ws="$HOME/reporting/watson-add-webform-sprint.sh"
           alias @n="$HOME/reporting/watson-add-none.sh"
           alias @b="$HOME/reporting/watson-add-break.sh"
           alias @="watson"
           
-          alias j="./jira-list.sh"
+          alias j="./jira-list.sh DATAINT"
           alias jfzf="j | fzf --height 20 | awk '{print \$1}'"
+
 
           daily ()
           {
@@ -95,6 +98,12 @@
           {
               TICKET=$(jfzf)
               report $1 $2 $TICKET $3
+          }
+
+          finapi() {
+              TICKET=$(./jira-list.sh FINAPI | fzf --height 20 | awk '{print $1}')
+              activity=''${3:-code}
+              $HOME/reporting/watson-add-di-sprint.sh $1 $2 +$TICKET +$activity
           }
 
           echo "${name}"

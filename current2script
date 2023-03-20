@@ -1,6 +1,14 @@
 REPORT_DAY=`cat ./reportday`
 
-./jira-list.sh
+echo "Jan +02h 05m"
+echo "Feb +01h 25m"
+echo "Sum +03h 30m"
+echo
+
+./jira-list.sh DATAINT
+echo
+
+./jira-list.sh FINAPI
 echo
 
 cal -w -3 -m
@@ -33,7 +41,7 @@ echo
 echo "Current"
 if [[ -z "$REPORT_DAY" ]]
 then
-  watson log -c -w -G --no-pager -p other -p vacation -p none -p di
+  watson log -c -w -G --no-pager -p other -p vacation -p none -p di -p webform
 else
-  watson log -c -G --no-pager -p other -p vacation -p none -p di -f $REPORT_DAY -t $REPORT_DAY
+  watson log -c -G --no-pager -p other -p vacation -p none -p di -p webform -f $REPORT_DAY -t $REPORT_DAY
 fi
