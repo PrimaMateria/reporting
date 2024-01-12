@@ -126,7 +126,7 @@
           text = ''
             jira:
               server: https://finapi.jira.com/
-              cookie: tenant.session.token=eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNTkyODU4Mzk0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI1Zjc1YTUxNTk1ZmU4ZTAwNjk1YmI1YzMiLCJlbWFpbERvbWFpbiI6ImZpbmFwaS5pbyIsImltcGVyc29uYXRpb24iOltdLCJjcmVhdGVkIjoxNjc5MzI2OTYxLCJyZWZyZXNoVGltZW91dCI6MTcwMTY4NzAxNCwidmVyaWZpZWQiOnRydWUsImlzcyI6InNlc3Npb24tc2VydmljZSIsInNlc3Npb25JZCI6IjA2M2VkOTdkLWJiMDMtNGRkNy1hZDBiLWYwNzgxMjcxMTM3OCIsInN0ZXBVcHMiOltdLCJhdWQiOiJhdGxhc3NpYW4iLCJuYmYiOjE3MDE2ODY0MTQsImV4cCI6MTcwNDI3ODQxNCwiaWF0IjoxNzAxNjg2NDE0LCJlbWFpbCI6Im1hdHVzLmJlbmtvQGZpbmFwaS5pbyIsImp0aSI6IjA2M2VkOTdkLWJiMDMtNGRkNy1hZDBiLWYwNzgxMjcxMTM3OCJ9.cQDCKLy6go_qs5VZFMJ_TPJjzFoaReG5KX7GkPcWfhNCxOFk4GYBspPwApSUBeR-JHJnxtjqurS_41or9Ep1eLWdf20iBsVyoyIThYTcVeRcY0zW1aQlTwemh3sgOtoSABiA92PbmEzTYqDBQUWg90Yb4PGes5V558N3KZo_jgnNHevoOnItXAiBSVbAtdRR3cfTHV2MWPHNgq1TKf9Ru8BAhwp5bFQrw9pnGCaC4KvIVt-NP_8jHQqn2ox_-Dzeuwoq-i8MZp41m4dgmelD9XeyLYQB_Qf1xwmdIBQwOHojzZ_G5df4ASAvslDJ-Ga8LD5BCzA9RsAuGi-9wn69Iw; ajs_anonymous_id=%2293cc60b6-e678-4a9e-99de-40f698326193%22; atlassian.xsrf.token=20fb7fdb25a35b35140df123345c610191966bfe_lin; JSESSIONID=A8135CB6FEB4A5ADF15112418B2DF6FD; io=oA5lNOD-45hp-bFgAHAF
+              cookie: tenant.session.token=eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNTkyODU4Mzk0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI1Zjc1YTUxNTk1ZmU4ZTAwNjk1YmI1YzMiLCJlbWFpbERvbWFpbiI6ImZpbmFwaS5pbyIsImltcGVyc29uYXRpb24iOltdLCJjcmVhdGVkIjoxNzAxNjg3MzUzLCJyZWZyZXNoVGltZW91dCI6MTcwMzE2OTE2NCwidmVyaWZpZWQiOnRydWUsImlzcyI6InNlc3Npb24tc2VydmljZSIsInNlc3Npb25JZCI6ImVkZTg2YjhkLWNmODUtNDc0Ni1iNzYzLThlN2RkYzQwNGE0ZiIsInN0ZXBVcHMiOltdLCJvcmdJZCI6IjU1NDEyMDE5LThlMjktNGY0Ny04YzI1LTBhNmY0NjJiYzU5ZiIsImF1ZCI6ImF0bGFzc2lhbiIsIm5iZiI6MTcwMzE2ODU2NCwiZXhwIjoxNzA1NzYwNTY0LCJpYXQiOjE3MDMxNjg1NjQsImVtYWlsIjoibWF0dXMuYmVua29AZmluYXBpLmlvIiwianRpIjoiZWRlODZiOGQtY2Y4NS00NzQ2LWI3NjMtOGU3ZGRjNDA0YTRmIn0.IHL1YlqNg3ckTUbxLpV_IhsgW1290Ow785W3P9e-7Wsl9oFFkgm30EI79pXuruxUwNqwuhkudP_hcWXEOs2hkipsBIu7wRacEeFscimT06CuiT-daT9SBXGXsPmZbt5gOu4tqzPOYh3O6r_tpN8QtIgF07CLh3OctjrT1DIVkpD3OGeZquVGV0BiukaxKmsCqaZrW4XtxAiXayJ1MsrisAItd8ScRRET1NprBeQm7zU-hl5eyPNY9hjyxCSD4IVwiYl6C_6wNAS1IjsYk3eUHp8ezgMaIvJHS0AlwRznD6KzQDnEAagZ-jKjPcn4VzOz146afG_zPX3XFuJwBA_7dw; ajs_anonymous_id=%2293cc60b6-e678-4a9e-99de-40f698326193%22; atlassian.xsrf.token=1c93f13e9aa93b20a2322098f0b5f003857eb17c_lin; JSESSIONID=0AAFE731EA18B84A2BE7E2998CC6C946
             mappings:
               - name: sprint
                 type: issue_specified_in_tag
@@ -183,6 +183,17 @@
               $HOME/reporting/watson-add-webform-sprint.sh $1 $2 +$TICKET
             }
 
+            b () {
+              TICKET=$(./jira-list.sh board | fzf --height 20 | awk '{print $1}')
+              if [[ $TICKET == FINAPI* ]]; then
+                  $HOME/reporting/watson-add-webform-sprint.sh $1 $2 +$TICKET
+              elif [[ $TICKET == ABC* ]]; then
+                  $HOME/reporting/watson-add-di-sprint.sh $1 $2 +$TICKET 
+              else
+                  echo "No matching project for the ticket"
+              fi
+            }
+
             watsonstart () {
               PROJECT=$1
               TICKET=$2
@@ -217,7 +228,7 @@
               TICKET=$(./jira-list.sh FINAPI | fzf --height 20 | awk '{print $1}')
               sf $TICKET $AT
             }
-             
+
             s () { 
               watson stop
             }
